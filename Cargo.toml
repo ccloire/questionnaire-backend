@@ -1,0 +1,40 @@
+[package]
+name = "questionnaire-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web框架
+axum = { version = "0.6.20", features = ["macros"] }
+async-trait = "0.1.77"
+tokio = { version = "1.35.1", features = ["full"] }
+tower = "0.5.1"
+tower-http = { version = "0.3.5", features = ["cors", "trace"] }
+
+# 序列化、反序列化
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+
+# 数据库
+sqlx = { version = "0.7.3", features = ["runtime-tokio", "mysql", "time", "uuid", "chrono"] }
+uuid = { version = "1.6.1", features = ["v4", "serde"] }
+chrono = { version = "0.4.34", features = ["serde"] }
+
+# 日志
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+
+# 认证与加密
+jsonwebtoken = "9.2.0"
+bcrypt = "0.17.0"
+rand = "0.9.0"
+
+# 配置文件处理
+dotenv = "0.15.0"
+config = "0.15.10"
+
+# 其他工具
+anyhow = "1.0.80"
+thiserror = "2.0.11"
+validator = { version = "0.20.0", features = ["derive"] }
+time = { version = "0.3.34", features = ["serde"] } 
